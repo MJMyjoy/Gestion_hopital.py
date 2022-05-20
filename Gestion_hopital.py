@@ -50,6 +50,7 @@ def enreg_patient(nom, pnom, prenom, tel, poids, taille, genre, age):
                 patient.append(age)
         except ValueError:
                 print ("Vous avez entré une valeur invalide!")
+                return
         if len(list_patients) > 0:
             for i in range (len(list_patients)):
                 num_dossier = random.randint(10000000, 100000000)
@@ -192,7 +193,7 @@ def enreg_horaire(matricule, dossier):
                                             c1 = int(input("Numero invalide! Entrez le numero d'une plainte à ajouter"))
                                 except ValueError:
                                      print ("Vous avez entré une valeur invalide!")
-                                     main()
+                                     return
                                             
                                 c2 = input("Tapez en toute lettre un jour de la semaine (du lundi au samedi) auquel sera attachée la plainte:")
                                 while c2.lower() != "lundi" and c2.lower() != "mardi" and c2.lower() != "mercredi" and \
@@ -309,6 +310,7 @@ def disponibilite_medecin(matricule):
                         enreg_horaire(matricule, int(input("Entrez le numero du dossier du patient à prendre en charge:")))
                     except ValueError:
                          print("Vous avez entré une valeur inavlide!")
+                         return
                 else:
                     print("Merci")
 
